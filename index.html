@@ -209,6 +209,20 @@
   footer .conf{font-size:12.5px;color:#8FA39A;max-width:48ch;line-height:1.5}
   footer .mark{font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:24px;color:var(--green)}
 
+  /* hero photo (replaces glass dashboard) */
+  .hero-photo{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow-lg);position:relative;line-height:0}
+  .hero-photo::after{content:"";position:absolute;inset:0;border-radius:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);pointer-events:none}
+  .hero-photo img{display:block;width:100%;height:auto}
+
+  /* full-width master image band */
+  .masterband{position:relative;min-height:400px;display:grid;place-items:center;overflow:hidden;background:var(--ink)}
+  .masterband .mb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 28%}
+  .masterband .mb-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,10,.88) 0%,rgba(8,12,10,.72) 38%,rgba(8,12,10,.34) 70%,rgba(8,12,10,.18) 100%)}
+  .masterband .mb-content{position:relative;z-index:2;max-width:var(--maxw);width:100%;margin:0 auto;padding:64px 28px}
+  .masterband h2{color:#fff;font-family:'Fraunces',serif;font-size:42px;line-height:1.08;max-width:17ch;margin:0}
+  .masterband .mb-kicker{color:var(--green);font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+  .masterband .mb-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
   .reveal.in{opacity:1;transform:none}
 
@@ -218,6 +232,10 @@
     .jstep:not(:last-child)::after{display:none}
     h1.hero-h{font-size:38px}.sec-head h2{font-size:28px}.final h2{font-size:30px}.ai-head h2{font-size:27px}
     .navlinks{display:none}
+    .masterband{min-height:300px}
+    .masterband h2{font-size:28px;max-width:24ch}
+    .masterband .mb-content{padding:48px 24px}
+    .masterband .mb-overlay{background:linear-gradient(180deg,rgba(8,12,10,.55) 0%,rgba(8,12,10,.82) 100%)}
   }
 </style>
 </head>
@@ -284,17 +302,8 @@
     </div>
 
     <div class="reveal in pwrap">
-      <div class="panel">
-        <div class="topdots"><span></span><span></span><span></span></div>
-        <div class="dash-row"><b><span class="es">Cartera de clientes</span><span class="en">Client portfolio</span></b><span class="pill">486 <span class="es">activos</span><span class="en">active</span></span></div>
-        <div class="dash-row"><span><span class="es">Listos para Verifactu</span><span class="en">Ready for Verifactu</span></span><span class="pill">82%</span></div>
-        <div class="dash-row"><span><span class="es">Por preparar</span><span class="en">Still to prepare</span></span><span class="pill warn">87</span></div>
-        <div class="dash-row"><span><span class="es">Conexión con la AEAT</span><span class="en">AEAT connection</span></span><span class="pill"><span class="es">al día</span><span class="en">on track</span></span></div>
-        <div style="padding-top:12px">
-          <div style="font-size:12px;color:#9FB0A8"><span class="es">Adopción de software homologado</span><span class="en">Compliant-software adoption</span></div>
-          <div class="bar"><i style="width:82%"></i></div>
-        </div>
-        <div class="dash-row" style="margin-top:14px"><span><span class="es">Tareas automatizadas (mes)</span><span class="en">Automated tasks (mo.)</span></span><b>2.140</b></div>
+      <div class="hero-photo">
+        <img src="Spanish%20Accountant%20website%20image%201.png" alt="Asesor revisando las cuentas de un cliente en el portátil" fetchpriority="high">
       </div>
       <div class="float a">+38% <span class="es">tiempo liberado</span><span class="en">time freed</span></div>
       <div class="float b"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#065C3C" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><span class="es">Conectado a la AEAT</span><span class="en">Connected to the AEAT</span></div>
@@ -453,6 +462,19 @@
       </ul>
       <p class="ai-note"><span class="es">Capacidades en desarrollo, presentadas como dirección de producto — no como funciones disponibles hoy.</span><span class="en">Capabilities in development, shown as product direction — not as features available today.</span></p>
     </div>
+  </div>
+</section>
+
+<!-- MASTER IMAGE BAND (full width) -->
+<section class="masterband" aria-label="Sencillo de gestionar, precios claros">
+  <img class="mb-img" src="Spanish%20Accountant%20website%20image%202.png" alt="Asesor trabajando con confianza en Sage" loading="lazy">
+  <div class="mb-overlay"></div>
+  <div class="mb-content reveal">
+    <span class="mb-kicker"><span class="es">Sencillo y transparente</span><span class="en">Simple and transparent</span></span>
+    <h2>
+      <span class="es">Tu despacho, sencillo de gestionar, con precios claros.</span>
+      <span class="en">Making your practice simple to run with clear pricing.</span>
+    </h2>
   </div>
 </section>
 
